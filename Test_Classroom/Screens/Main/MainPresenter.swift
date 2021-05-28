@@ -27,7 +27,8 @@ final class MainPresenter: MainViewPresenterProtocol {
     private weak var view: MainViewProtocol?
     private var router: RouterProtocol?
     private var classRooms: [ClassRoom]?
-    private var filterClassRooms: [ClassRoom]?
+    private var filterClassRooms = [ClassRoom]()
+    private var dayUpdate: Int?
     
     required init(view: MainViewProtocol, router: RouterProtocol) {
         self.view = view
@@ -35,35 +36,53 @@ final class MainPresenter: MainViewPresenterProtocol {
     }
     
     func fetchClassRooms() {
-        view?.showSpinner()
         
-        // Simulation fetch data
-        DispatchQueue.global().asyncAfter(deadline: .now() + 3) {
-            
-            Service.fetchReques { [weak self] (classRooms: [ClassRoom]) in
-                self?.classRooms = classRooms
+        if Base.shared.classRooms.count == 0 || getCurrentDayUpdate() == true {
+            view?.showSpinner()
+            // Simulation fetch data
+            DispatchQueue.global().asyncAfter(deadline: .now() + 3) { [weak self] in
                 
-                DispatchQueue.main.async {
-                    self?.view?.hideSpinner()
+                self?.setCurrentDayUpdate()
+                
+                Service.fetchReques { [weak self] (classRooms: [ClassRoom]) in
+                    self?.classRooms = classRooms
+                    Base.shared.saveClassRoom(classRooms)
+                    
+                    DispatchQueue.main.async {
+                        self?.view?.hideSpinner()
+                    }
                 }
             }
+        } else {
+            classRooms = Base.shared.classRooms
+            view?.reloadTable()
         }
+    }
+    
+    private func setCurrentDayUpdate() {
+        let currentDate = Date()
+        let calendar = Calendar.current
+        dayUpdate = calendar.component(.day, from: currentDate)
+    }
+    
+    private func getCurrentDayUpdate() -> Bool {
+        let currentDate = Date()
+        let calendar = Calendar.current
+        let newDay = calendar.component(.day, from: currentDate)
+        
+        return newDay == dayUpdate ? true : false
     }
     
     func numberOfRowsInSection() -> Int {
         
-        guard let filterClassRooms = filterClassRooms else { return classRooms?.count ?? 0 }
-        
         if !filterClassRooms.isEmpty {
             return filterClassRooms.count
+        } else {
+            return classRooms?.count ?? 0
         }
-        
-        return classRooms?.count ?? 0
     }
     
     func getClassRoom(index: IndexPath) -> ClassRoom? {
-        
-        guard let filterClassRooms = filterClassRooms else { return classRooms?[index.row] }
         
         if !filterClassRooms.isEmpty {
             return filterClassRooms[index.row]
@@ -73,7 +92,7 @@ final class MainPresenter: MainViewPresenterProtocol {
     }
     
     func getTextField(text: String) {
-        filterClassRooms?.removeAll()
+        filterClassRooms.removeAll()
         
         guard let classRooms = classRooms else { return }
         

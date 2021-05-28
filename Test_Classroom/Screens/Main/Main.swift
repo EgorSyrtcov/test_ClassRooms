@@ -43,6 +43,7 @@ final class Main: UIViewController {
         searchView.backgroundColor = UIColor.searchColor()
         searchView.layer.cornerRadius = searchView.layer.bounds.width / 2
         filterTextField.delegate = self
+        self.hideKeyboardWhenTappedAround()
     }
     
     private func setupTableView() {
@@ -57,10 +58,12 @@ final class Main: UIViewController {
 extension Main: MainViewProtocol {
     
     func showSpinner() {
+        activityIndicator.startAnimating()
         activityIndicator.isHidden = false
     }
     
     func hideSpinner() {
+        activityIndicator.stopAnimating()
         activityIndicator.isHidden = true
         tableView.reloadData()
     }
@@ -91,6 +94,11 @@ extension Main: UITextFieldDelegate {
         
         guard let text = textField.text else { return }
         presenter.getTextField(text: text)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
 

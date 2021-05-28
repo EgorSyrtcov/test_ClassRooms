@@ -7,8 +7,7 @@
 
 import Foundation
 
-
-struct ClassRoom: Decodable {
+struct ClassRoom: Codable {
     
     let id: Int
     let type: String

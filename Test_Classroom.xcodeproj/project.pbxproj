@@ -11,6 +11,8 @@
 		E26208F7265FC3E80015F2A0 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26208F6265FC3E80015F2A0 /* Service.swift */; };
 		E26208FC265FC43A0015F2A0 /* ClassRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26208FB265FC43A0015F2A0 /* ClassRoom.swift */; };
 		E2620900265FDF140015F2A0 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26208FF265FDF140015F2A0 /* Date.swift */; };
+		E26A8E252660BCD500639085 /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26A8E242660BCD500639085 /* Base.swift */; };
+		E26A8E282660C48400639085 /* HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26A8E272660C48400639085 /* HideKeyboard.swift */; };
 		E2882768265F93470038546A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2882767265F93470038546A /* AppDelegate.swift */; };
 		E288276A265F93470038546A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2882769265F93470038546A /* SceneDelegate.swift */; };
 		E2882771265F93480038546A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2882770265F93480038546A /* Assets.xcassets */; };
@@ -30,6 +32,8 @@
 		E26208F6265FC3E80015F2A0 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		E26208FB265FC43A0015F2A0 /* ClassRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassRoom.swift; sourceTree = "<group>"; };
 		E26208FF265FDF140015F2A0 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		E26A8E242660BCD500639085 /* Base.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base.swift; sourceTree = "<group>"; };
+		E26A8E272660C48400639085 /* HideKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HideKeyboard.swift; sourceTree = "<group>"; };
 		E2882764265F93470038546A /* Test_Classroom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Test_Classroom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2882767265F93470038546A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2882769265F93470038546A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +75,14 @@
 				E26208FB265FC43A0015F2A0 /* ClassRoom.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		E26A8E232660BCC000639085 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				E26A8E242660BCD500639085 /* Base.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		E288275B265F93470038546A = {
@@ -116,6 +128,7 @@
 		E288277D265F93A50038546A /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
+				E26A8E232660BCC000639085 /* Base */,
 				E26208F5265FC3D80015F2A0 /* Service */,
 			);
 			path = Dependencies;
@@ -186,6 +199,7 @@
 		E28827A2265FAAEB0038546A /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				E26A8E272660C48400639085 /* HideKeyboard.swift */,
 				E28827A3265FAAFC0038546A /* Color.swift */,
 				E26208FF265FDF140015F2A0 /* Date.swift */,
 			);
@@ -273,6 +287,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E26A8E252660BCD500639085 /* Base.swift in Sources */,
 				E28827A9265FB57A0038546A /* ClassCell.swift in Sources */,
 				E288278E265F959A0038546A /* Main.swift in Sources */,
 				E2882792265F95B20038546A /* MainPresenter.swift in Sources */,
@@ -280,6 +295,7 @@
 				E2882768265F93470038546A /* AppDelegate.swift in Sources */,
 				E26208F7265FC3E80015F2A0 /* Service.swift in Sources */,
 				E2882785265F940F0038546A /* Router.swift in Sources */,
+				E26A8E282660C48400639085 /* HideKeyboard.swift in Sources */,
 				E288276A265F93470038546A /* SceneDelegate.swift in Sources */,
 				E2620900265FDF140015F2A0 /* Date.swift in Sources */,
 				E26208FC265FC43A0015F2A0 /* ClassRoom.swift in Sources */,

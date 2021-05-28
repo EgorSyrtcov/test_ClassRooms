@@ -9,10 +9,21 @@ import UIKit
 
 final class ClassCell: UITableViewCell {
     
-    private enum StatusColor: String {
+    private enum StatusColor {
         case inProgress
         case completed
         case notStarted
+        
+        var textName: String {
+            switch self {
+            case .inProgress:
+                return "inProgress"
+            case .completed:
+                return "completed"
+            case .notStarted:
+                return "notStarted"
+            }
+        }
     }
     
     static let identifier = "ClassCell"
@@ -26,7 +37,8 @@ final class ClassCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        selectionStyle = .none
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -57,15 +69,15 @@ final class ClassCell: UITableViewCell {
             viewForButton.isHidden = true
         }
         
-        if classRoom.status == StatusColor.inProgress.rawValue {
+        if classRoom.status == StatusColor.inProgress.textName {
             viewStatus.backgroundColor = UIColor.statusInProcessColor()
         }
         
-        if classRoom.status == StatusColor.completed.rawValue {
+        if classRoom.status == StatusColor.completed.textName {
             viewStatus.backgroundColor = UIColor.statusCompletedColor()
         }
         
-        if classRoom.status == StatusColor.notStarted.rawValue {
+        if classRoom.status == StatusColor.notStarted.textName {
             viewStatus.backgroundColor = UIColor.statusNotStartedColor()
         }
         
