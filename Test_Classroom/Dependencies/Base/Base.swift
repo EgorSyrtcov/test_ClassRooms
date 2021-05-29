@@ -11,16 +11,16 @@ class Base {
     
     static let shared = Base()
     
-   private let defaults = UserDefaults.standard
+    private let defaults = UserDefaults.standard
     
-    init() {}
+    private init() {}
     
     var classRooms: [ClassRoom] {
         get {
             if let data = defaults.value(forKey: "classRooms") as? Data {
-              return try! PropertyListDecoder().decode([ClassRoom].self, from: data)
+                return try! PropertyListDecoder().decode([ClassRoom].self, from: data)
             } else {
-               return [ClassRoom]()
+                return [ClassRoom]()
             }
         }
         
