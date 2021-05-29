@@ -54,7 +54,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Pg-2o-v8m" userLabel="ViewButton">
                         <rect key="frame" x="308" y="41" width="37" height="37"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="next" translatesAutoresizingMaskIntoConstraints="NO" id="c7N-zP-6W9">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_next_button" translatesAutoresizingMaskIntoConstraints="NO" id="c7N-zP-6W9">
                                 <rect key="frame" x="0.0" y="0.0" width="37" height="37"/>
                             </imageView>
                         </subviews>
@@ -98,7 +98,7 @@
     </objects>
     <resources>
         <image name="Group 1588" width="502.5" height="151.5"/>
-        <image name="next" width="64" height="64"/>
+        <image name="ico_next_button" width="37" height="37"/>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

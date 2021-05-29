@@ -58,18 +58,24 @@ final class Main: UIViewController {
 extension Main: MainViewProtocol {
     
     func showSpinner() {
-        activityIndicator.startAnimating()
-        activityIndicator.isHidden = false
+        DispatchQueue.main.async { [weak self] in
+            self?.activityIndicator.startAnimating()
+            self?.activityIndicator.isHidden = false
+        }
     }
     
     func hideSpinner() {
-        activityIndicator.stopAnimating()
-        activityIndicator.isHidden = true
-        tableView.reloadData()
+        DispatchQueue.main.async { [weak self] in
+            self?.activityIndicator.stopAnimating()
+            self?.activityIndicator.isHidden = true
+            self?.tableView.reloadData()
+        }
     }
     
     func reloadTable() {
-        tableView.reloadData()
+        DispatchQueue.main.async { [weak self] in
+            self?.tableView.reloadData()
+        }
     }
 }
 
@@ -82,7 +88,7 @@ extension Main: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ClassCell.identifier,
                                                        for: indexPath) as? ClassCell else { return UITableViewCell() }
-        let classRoom = presenter.getClassRoom(index: indexPath)
+        let classRoom = presenter.getClassRoom(by: indexPath)
         cell.setupClassRoom(classRoom)
         return cell
     }
@@ -93,7 +99,7 @@ extension Main: UITextFieldDelegate {
     func textFieldDidChangeSelection(_ textField: UITextField) {
         
         guard let text = textField.text else { return }
-        presenter.getTextField(text: text)
+        presenter.filteringResult(with: text)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

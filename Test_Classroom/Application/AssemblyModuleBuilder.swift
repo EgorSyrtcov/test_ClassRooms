@@ -15,7 +15,8 @@ class AssemblyModuleBuilder: AssemblyBuilderProtocol {
     
     func createMainModule(router: RouterProtocol) -> UIViewController {
         let view = Main()
-        let presenter = MainPresenter(view: view, router: router)
+        let dependencies = Dependencies()
+        let presenter = MainPresenter(view: view, router: router, dependencies: dependencies)
         view.presenter = presenter
         return view
     }
