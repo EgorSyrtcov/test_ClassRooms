@@ -7,13 +7,13 @@
 
 import Foundation
 
-protocol MainViewProtocol: class {
+protocol MainViewProtocol: AnyObject {
     func showSpinner()
     func hideSpinner()
     func reloadTable()
 }
 
-protocol MainViewPresenterProtocol: class {
+protocol MainViewPresenterProtocol: AnyObject {
     init(view: MainViewProtocol, router: RouterProtocol, dependencies: Dependencies)
     
     func fetchClassRooms()

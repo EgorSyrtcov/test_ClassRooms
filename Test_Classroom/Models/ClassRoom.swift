@@ -63,6 +63,9 @@ struct ClassRoom: Codable {
     let name: String
     let updateAt: Int
     
+    private let _type: String
+    private let _status: String
+    
     var type: ClassRoomType {
         switch _type.lowercased() {
         case "physics": return .physics
@@ -83,15 +86,11 @@ struct ClassRoom: Codable {
         }
     }
     
-    private let _type: String
-    private let _status: String
-    
     enum CodingKeys: String, CodingKey {
         case id
         case name
         case updateAt
         case _type = "type"
         case _status = "status"
-    }
-    
+    }   
 }
