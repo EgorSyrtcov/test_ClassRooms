@@ -26,6 +26,8 @@
 		E28827A4265FAAFC0038546A /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28827A3265FAAFC0038546A /* Color.swift */; };
 		E28827A9265FB57A0038546A /* ClassCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28827A7265FB57A0038546A /* ClassCell.swift */; };
 		E28827AA265FB57A0038546A /* ClassCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E28827A8265FB57A0038546A /* ClassCell.xib */; };
+		E2CA9CC9270F0EE2004A2107 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CA9CC8270F0EE2004A2107 /* UITableView.swift */; };
+		E2CA9CCB270F0F17004A2107 /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CA9CCA270F0F17004A2107 /* UITableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,8 @@
 		E28827A3265FAAFC0038546A /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		E28827A7265FB57A0038546A /* ClassCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassCell.swift; sourceTree = "<group>"; };
 		E28827A8265FB57A0038546A /* ClassCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClassCell.xib; sourceTree = "<group>"; };
+		E2CA9CC8270F0EE2004A2107 /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
+		E2CA9CCA270F0F17004A2107 /* UITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +217,8 @@
 			children = (
 				E26A8E272660C48400639085 /* HideKeyboard.swift */,
 				E28827A3265FAAFC0038546A /* Color.swift */,
+				E2CA9CC8270F0EE2004A2107 /* UITableView.swift */,
+				E2CA9CCA270F0F17004A2107 /* UITableViewCell.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -299,7 +305,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E28827A9265FB57A0038546A /* ClassCell.swift in Sources */,
+				E2CA9CCB270F0F17004A2107 /* UITableViewCell.swift in Sources */,
 				E288278E265F959A0038546A /* Main.swift in Sources */,
+				E2CA9CC9270F0EE2004A2107 /* UITableView.swift in Sources */,
 				E276A3B6266261790026AB36 /* Dependencies.swift in Sources */,
 				E2882792265F95B20038546A /* MainPresenter.swift in Sources */,
 				E28827A4265FAAFC0038546A /* Color.swift in Sources */,

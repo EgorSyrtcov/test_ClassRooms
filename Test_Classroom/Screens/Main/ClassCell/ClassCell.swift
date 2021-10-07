@@ -9,8 +9,6 @@ import UIKit
 
 final class ClassCell: UITableViewCell {
     
-    static let identifier = "ClassCell"
-    
     @IBOutlet private weak var name: UILabel!
     @IBOutlet private weak var status: UILabel!
     @IBOutlet weak var dateUpdate: UILabel!
@@ -26,10 +24,6 @@ final class ClassCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-    }
-    
-    static func nib() -> UINib {
-        return UINib(nibName: "ClassCell", bundle: nil)
     }
     
     override func layoutSubviews() {

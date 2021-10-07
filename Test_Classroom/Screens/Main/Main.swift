@@ -47,7 +47,7 @@ final class Main: UIViewController {
     }
     
     private func setupTableView() {
-        tableView.register(ClassCell.nib(), forCellReuseIdentifier: ClassCell.identifier)
+        tableView.registerNibForCell(ClassCell.self)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
