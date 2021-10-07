@@ -86,8 +86,7 @@ extension Main: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: ClassCell.identifier,
-                                                       for: indexPath) as? ClassCell else { return UITableViewCell() }
+        let cell: ClassCell = tableView.dequeueReusableCell(for: indexPath)
         let classRoom = presenter.getClassRoom(by: indexPath)
         cell.setupClassRoom(classRoom)
         return cell
