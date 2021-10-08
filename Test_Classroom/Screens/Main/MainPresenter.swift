@@ -20,10 +20,11 @@ protocol MainViewPresenterProtocol: AnyObject {
     func numberOfRowsInSection() -> Int
     func getClassRoom(by indexPath: IndexPath) -> ClassRoom?
     func filteringResult(with text: String)
+    func pushOnDetailScreen(classRoom: ClassRoom)
 }
 
 final class MainPresenter: MainViewPresenterProtocol {
-    
+   
     private weak var view: MainViewProtocol?
     private var router: RouterProtocol?
     private var dependencies: Dependencies
@@ -71,6 +72,10 @@ extension MainPresenter {
     func getClassRoom(by indexPath: IndexPath) -> ClassRoom? {
         guard !filteredClassRooms.isEmpty, filteredClassRooms.count - 1 >= indexPath.row else { return nil }
         return filteredClassRooms[indexPath.row]
+    }
+    
+    func pushOnDetailScreen(classRoom: ClassRoom) {
+        router?.pushDetailScreen(classRoom: classRoom)
     }
 }
 

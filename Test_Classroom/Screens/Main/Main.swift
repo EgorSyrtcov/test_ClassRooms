@@ -91,6 +91,11 @@ extension Main: UITableViewDelegate, UITableViewDataSource {
         cell.setupClassRoom(classRoom)
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let classRoom = presenter.getClassRoom(by: indexPath) else { return }
+        presenter.pushOnDetailScreen(classRoom: classRoom)
+    }
 }
 
 extension Main: UITextFieldDelegate {

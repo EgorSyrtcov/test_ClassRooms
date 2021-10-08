@@ -26,6 +26,9 @@
 		E28827A4265FAAFC0038546A /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28827A3265FAAFC0038546A /* Color.swift */; };
 		E28827A9265FB57A0038546A /* ClassCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28827A7265FB57A0038546A /* ClassCell.swift */; };
 		E28827AA265FB57A0038546A /* ClassCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E28827A8265FB57A0038546A /* ClassCell.xib */; };
+		E29A7DA32710131400A43919 /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29A7DA12710131400A43919 /* Detail.swift */; };
+		E29A7DA42710131400A43919 /* Detail.xib in Resources */ = {isa = PBXBuildFile; fileRef = E29A7DA22710131400A43919 /* Detail.xib */; };
+		E29A7DA62710133F00A43919 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29A7DA52710133F00A43919 /* DetailPresenter.swift */; };
 		E2CA9CC9270F0EE2004A2107 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CA9CC8270F0EE2004A2107 /* UITableView.swift */; };
 		E2CA9CCB270F0F17004A2107 /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CA9CCA270F0F17004A2107 /* UITableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -52,6 +55,9 @@
 		E28827A3265FAAFC0038546A /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		E28827A7265FB57A0038546A /* ClassCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassCell.swift; sourceTree = "<group>"; };
 		E28827A8265FB57A0038546A /* ClassCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClassCell.xib; sourceTree = "<group>"; };
+		E29A7DA12710131400A43919 /* Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detail.swift; sourceTree = "<group>"; };
+		E29A7DA22710131400A43919 /* Detail.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Detail.xib; sourceTree = "<group>"; };
+		E29A7DA52710133F00A43919 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
 		E2CA9CC8270F0EE2004A2107 /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
 		E2CA9CCA270F0F17004A2107 /* UITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -172,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				E288278A265F94AB0038546A /* Main */,
+				E29A7DA0271012E300A43919 /* Detail */,
 				E2882789265F94950038546A /* Launch */,
 			);
 			path = Screens;
@@ -230,6 +237,16 @@
 				E28827A8265FB57A0038546A /* ClassCell.xib */,
 			);
 			path = ClassCell;
+			sourceTree = "<group>";
+		};
+		E29A7DA0271012E300A43919 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				E29A7DA52710133F00A43919 /* DetailPresenter.swift */,
+				E29A7DA12710131400A43919 /* Detail.swift */,
+				E29A7DA22710131400A43919 /* Detail.xib */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,6 +310,7 @@
 				E2882774265F93480038546A /* LaunchScreen.storyboard in Resources */,
 				E26208F3265FC2870015F2A0 /* generated.json in Resources */,
 				E288278F265F959A0038546A /* Main.xib in Resources */,
+				E29A7DA42710131400A43919 /* Detail.xib in Resources */,
 				E2882771265F93480038546A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -307,6 +325,7 @@
 				E28827A9265FB57A0038546A /* ClassCell.swift in Sources */,
 				E2CA9CCB270F0F17004A2107 /* UITableViewCell.swift in Sources */,
 				E288278E265F959A0038546A /* Main.swift in Sources */,
+				E29A7DA32710131400A43919 /* Detail.swift in Sources */,
 				E2CA9CC9270F0EE2004A2107 /* UITableView.swift in Sources */,
 				E276A3B6266261790026AB36 /* Dependencies.swift in Sources */,
 				E2882792265F95B20038546A /* MainPresenter.swift in Sources */,
@@ -314,6 +333,7 @@
 				E276A3BC266264380026AB36 /* SessionService.swift in Sources */,
 				E2882768265F93470038546A /* AppDelegate.swift in Sources */,
 				E276A3C2266270D30026AB36 /* Int+Date.swift in Sources */,
+				E29A7DA62710133F00A43919 /* DetailPresenter.swift in Sources */,
 				E2882785265F940F0038546A /* Router.swift in Sources */,
 				E26A8E282660C48400639085 /* HideKeyboard.swift in Sources */,
 				E288276A265F93470038546A /* SceneDelegate.swift in Sources */,
